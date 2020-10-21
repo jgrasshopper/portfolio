@@ -1,0 +1,129 @@
+// Utility Classes
+// Backgrounds
+.bg {
+  &-dark {
+    background: $dark-color;
+    color: set-text-color($dark-color);
+  }
+
+  &-light {
+    background: $light-color;
+    color: set-text-color($light-color);
+  }
+
+  &-main {
+    background: $main-color;
+    color: set-text-color($main-color);
+  }
+  
+  &-medium { 
+    background: $medium-color;
+    color: set-text-color($medium-color);
+  }
+}
+
+// Buttons
+%btn-shared {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.5s;
+}
+
+.btn {
+  &-dark {
+    @extend %btn-shared;
+    background-color: $dark-color;
+    color: #f4f4f4;
+  }
+
+  &-light {
+    @extend %btn-shared;
+    background-color: $light-color;
+    color: #333;
+  }
+
+  &-main {
+    @extend %btn-shared;
+    background-color: $main-color;
+    color: #333;
+  }
+}
+
+button[class^='btn-']:hover,
+a[class^='btn-']:hover,
+input[class^='btn-']:hover {
+  background-color: $main-color;
+}
+
+.bottom-line {
+  background: $main-color;
+  display: block;
+  height: 2px;
+  margin: 0 auto 1rem auto;
+  width: 3rem;
+}
+
+.container {
+  margin: auto;
+  max-width: $website-width;
+  overflow: hidden;
+  padding: 0 4.5rem;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+// Margin
+.my {
+  &-1 {
+    margin: 1rem 0;
+  }
+
+  &-2 {
+    margin: 2rem 0;
+  }
+
+  &-3 {
+    margin: 3rem 0;
+  }
+
+  &-4 {
+    margin: 4rem 0;
+  }
+}
+
+// Padding
+.py {
+  &-1 {
+    padding: 1rem 0;
+  }
+
+  &-2 {
+    padding: 2rem 0;
+  }
+
+  &-3 {
+    padding: 3rem 0;
+  }
+
+  &-4 {
+    padding: 4rem 0;
+  }
+}
+
+.section-title {
+  display: block;
+  font-size: 2rem;
+  font-weight: 100;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}

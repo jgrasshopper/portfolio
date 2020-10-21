@@ -1,0 +1,110 @@
+.items {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  background: $main-color;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 100%;
+    opacity: 0.9;
+    position: absolute;
+    transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+    -webkit-transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+    -o-transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+    transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  // Bring in main color overlay
+  &:hover::after {
+    transform: scale(2) translateX(0) translateY(0) rotate(-28deg);
+  }
+
+  // Scale image on hover
+  &:hover &-image {
+    transform: scale(1.2);
+  }
+
+  // Bring in text on hover
+  &:hover &-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &-image {
+    display: block;
+    height: auto;
+    transform: translateZ(0);
+    -webkit-transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+    -o-transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+    transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  &-image::before {
+    content: '';
+    display: block;
+    overflow: hidden;
+    padding-top: 75%;
+  }
+
+  &-image img {
+    height: auto;
+    line-height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &-text {
+    color: #fff;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    transform: translateY(-20%);
+    -webkit-transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1), transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1), transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    -o-transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1), transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1), transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    transition-delay: 300ms;
+    z-index: 1;
+  }
+
+  &-text-wrap {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 100%;
+  }
+
+  &-text-title {
+    font-size: 2rem;
+    margin: 5px 0 0 0;
+    padding: 0 1rem;
+  }
+
+  &-text-category {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.7;
+    text-transform: uppercase;
+  }
+
+
+}
